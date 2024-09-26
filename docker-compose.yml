@@ -1,0 +1,29 @@
+services:
+  frontend:
+    build:
+      context: ./dealership-app
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+
+  backend:
+    build:
+      context: ./gamaApp
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+  
+  database:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret123!
+      POSTGRES_DB: my_db
+    volumes:
+      - './postgres_data:/var/lib/postgresql/data'
+    ports:
+      - "5432:5432"
+
+networks:
+  default:
+    driver: bridge
