@@ -1,0 +1,6 @@
+[submodule "gamaApp"]
+	path = gamaApp
+	url = https://github.com/ealcca/gamaApp.git
+[submodule "dealership-app"]
+	path = dealership-app
+	url = https://github.com/ealcca/dealership-app.git
